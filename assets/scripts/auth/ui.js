@@ -24,15 +24,15 @@ const signOutSuccess = () => {
   app.user = null;
 };
 
-const createFlightSuccess = (data) => {
-  app.user = data.user;
-  console.log(app.user);
-};
+// const createFlightSuccess = (data) => {
+//   app.user = data.user;
+//   console.log(app.user);
+// };
 
 module.exports = {
   success,
   failure,
   signInSuccess,
   signOutSuccess,
-  createFlightSuccess,
+  // createFlightSuccess,
 };

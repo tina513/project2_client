@@ -37,22 +37,22 @@ const onChangePassword = (event) => {
   .fail(ui.failure);
 };
 
-const onCreateFlight = (event) => {
-  event.preventDefault();
-  let data = getFormFields(event.target);
-  api.createFlight(data)
-  .done(ui.createFlightSuccess)
-  .fail(ui.failure);
-};
+// const onCreateFlight = (event) => {
+//   event.preventDefault();
+//   let data = getFormFields(event.target);
+//   api.createFlight(data)
+//   .done(ui.createFlightSuccess)
+//   .fail(ui.failure);
+// };
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
-  $('#flight-info').on('submit', onCreateFlight);
+  // $('#flight-info').on('submit', onCreateFlight);
 };
-//
+
 module.exports = {
   addHandlers,
 };

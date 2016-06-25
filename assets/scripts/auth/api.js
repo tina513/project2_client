@@ -39,21 +39,21 @@ const changePassword = (data) => {
   });
 };
 
-const createFlight = (data) => {
-  return $.ajax({
-    url: app.host + '/flights',
-    method: "POST",
-    data: data,
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-  });
-};
+// const createFlight = (data) => {
+//   return $.ajax({
+//     url: app.host + '/flights',
+//     method: "POST",
+//     data: data,
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//   });
+// };
 
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  createFlight,
+  // createFlight,
 };

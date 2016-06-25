@@ -164,6 +164,64 @@
        </fieldset>
      </form>
 
+     <button id="past-flight" type="button" class="btn btn-default">Your Flights</button>
+     <div class="past-flight-content">
+     </div>
+
+     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Edit Flight by your Flight Number</a>
+       <ul class="dropdown-menu">
+       <form id="edit-flight-content">
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[flight_number]" placeholder="flight number">
+         </div>
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[departure_date]" placeholder="departure date">
+         </div>
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[departure_time]" placeholder="departure time">
+         </div>
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[departure]" placeholder="departure">
+         </div>
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[arrival_date]" placeholder="arrival date">
+         </div>
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[arrival_time]" placeholder="arrival time">
+         </div>
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[arrival]" placeholder="arrival">
+         </div>
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[arrival_zipcode]" placeholder="arrival zipcode">
+         </div>
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[gate]" placeholder="gate">
+         </div>
+         <div class="input-group input-group-md" style="border:none;">
+           <input class="form-control" type="text" name="flights[terminal]" placeholder="terminal">
+         </div>
+         <div class="input-group input-group-md" style="border:none; margin:auto;">
+          <button class="btn btn-danger" type="submit" name="submit" value="submit">submit</button>
+        </div>
+       </form>
+     </ul>
+   </li>
+
+   <form id="delete-flight">
+     <fieldset>
+       <input type="text" name="flights[flight_number]" placeholder="flight number">
+       <input class="delete" type="submit" value="delete">
+     </fieldset>
+   </form>
+
+   <form id="search-flight">
+     <fieldset>
+       <input type="text" name="flights[flight_number]" placeholder="flight number">
+       <input class="search" type="submit" value="search">
+     </fieldset>
+   </form>
+
    </div>
  </body>
 </html>
