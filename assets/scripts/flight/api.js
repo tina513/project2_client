@@ -28,15 +28,16 @@ const updateFlight = (data) => {
   let arr = ui.returnTripsArr();
   for (let i = 0; i < arr.length; i++) {
     let trip = arr[i];
-    if (trip.flight.flight_number == data.flights.flight_number)
-    return $.ajax({
-      url: app.host + `/flights/` + trip.flight.id,
-      method: 'PATCH',
-      data: data,
-      headers: {
-        Authorization: 'Token token=' + app.user.token,
-      },
-    });
+    if (trip.flight.flight_number === data.flights.flight_number){
+      return $.ajax({
+        url: app.host + `/flights/` + trip.flight.id,
+        method: 'PATCH',
+        data: data,
+        headers: {
+          Authorization: 'Token token=' + app.user.token,
+        },
+      });
+    }
   }
 };
 
@@ -44,7 +45,7 @@ const deleteFlight = (data) => {
   let arr = ui.returnTripsArr();
   for (let i = 0; i < arr.length; i++) {
     let trip = arr[i];
-    if ((trip.flight.flight_number == data.flights.flight_number) && (trip.user.id == app.user.id)) {
+    if ((trip.flight.flight_number === data.flights.flight_number) && (trip.user.id === app.user.id)) {
       // console.log(trip.id);
       return $.ajax({
         url: app.host + '/trips/' + trip.id,
@@ -53,18 +54,18 @@ const deleteFlight = (data) => {
           Authorization: 'Token token=' + app.user.token,
         },
       });
-    };
-  };
+    }
+  }
 };
 
 const searchFlight = (data) => {
-  // return $.ajax({
-  //     url: app.host + `/flights/`+flight_id,
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: 'Token token=' + app.user.token,
-  //     },
-  //   });
+  return $.ajax({
+      url: app.host + '/flights',
+      method: 'GET',
+      headers: {
+        Authorization: 'Token token=' + app.user.token,
+      },
+    });
 };
 
 module.exports = {

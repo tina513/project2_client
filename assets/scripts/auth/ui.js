@@ -1,8 +1,21 @@
 'use strict';
 
 const app = require('../app.js');
+const signInApi = require('./signInApi.js');
 
-const success = (data) => {
+const signUpSuccess = (data) => {
+  let password = $('#sign-up-pw').val();
+  signInApi.autoSignIn(data.user.email, password)
+    .done(signInSuccess)
+    .fail(failure);
+};
+
+const signInSuccess = (data) => {
+  app.user = data.user;
+  console.log('Success');
+};
+
+const changePasswordSuccess = (data) => {
   if (data) {
     console.log(data);
   } else {
@@ -10,29 +23,18 @@ const success = (data) => {
   }
 };
 
+const signOutSuccess = () => {
+  console.log('User signed out successfully');
+};
+
 const failure = (error) => {
   console.error(error);
 };
 
-const signInSuccess = (data) => {
-  app.user = data.user;
-  console.log(app.user);
-};
-
-const signOutSuccess = () => {
-  console.log('User signed out successfully');
-  app.user = null;
-};
-
-// const createFlightSuccess = (data) => {
-//   app.user = data.user;
-//   console.log(app.user);
-// };
-
 module.exports = {
-  success,
-  failure,
+  signUpSuccess,
   signInSuccess,
+  changePasswordSuccess,
   signOutSuccess,
-  // createFlightSuccess,
+  failure,
 };

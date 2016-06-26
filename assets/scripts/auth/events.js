@@ -10,7 +10,7 @@ const onSignUp = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signUp(data)
-  .done(ui.success)
+  .done(ui.signUpSuccess)
   .fail(ui.failure);
 };
 
@@ -33,24 +33,15 @@ const onChangePassword = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
-  .done(ui.success)
+  .done(ui.changePasswordSuccess)
   .fail(ui.failure);
 };
-
-// const onCreateFlight = (event) => {
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   api.createFlight(data)
-//   .done(ui.createFlightSuccess)
-//   .fail(ui.failure);
-// };
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
-  // $('#flight-info').on('submit', onCreateFlight);
 };
 
 module.exports = {
