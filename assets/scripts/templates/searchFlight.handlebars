@@ -1,29 +1,20 @@
-<div style="border: solid black;">
-  <h4> Flight Number: {{flight_number}} </h4>
-  <h4> Departure Date: {{departure_date}} </h4>
-  <h4> Departure Time: {{departure_time}} </h4>
-  <h4> Departure: {{departure}} </h4>
-  <h4> Arrival Date: {{arrival_date}} </h4>
-  <h4> Arrival Time: {{arrival_time}} </h4>
-  <h4> Arrival: {{arrival}} </h4>
-  <h4> Arrival ZipCode: {{arrival_zipcode}} </h4>
-  <h4> Gate: {{gate}} </h4>
-  <h4> Terminal: {{terminal}} </h4>
-  <form id="search-flight-info">
-    <fieldset>
-      <legend>Flight Information!</legend>
-      <!-- <input type="text" name="trip[user_id]" value=> -->
-      <input id="trip-flight-{{id}}" type="text" name="trip[flight_id]" value={{id}}>
-      <!-- <input type="hidden" name="flights[departure_time]" value={{departure_time}}>
-      <input type="hidden" name="flights[departure]" value={{departure}}>
-      <input type="hidden" name="flights[arrival_date]" value={{arrival_date}}>
-      <input type="hidden" name="flights[arrival_time]" value={{arrival_time}}>
-      <input type="hidden" name="flights[arrival]" value={{arrival}}>
-      <input type="hidden" name="flights[arrival_zipcode]" value={{arrival_zipcode}}>
-      <input type="hidden" name="flights[gate]" value={{gate}}>
-      <input type="hidden" name="flights[terminal]" value={{terminal}}> -->
-      <!-- <input class="add-trip" type="submit" name="submit" value="Add to my Trip"> -->
-      <button id="add-trip-{{id}}" type="button" class="btn btn-default">Add to my Trips</button>
-    </fieldset>
-  </form>
+<div class="col-xs-18 col-sm-6 col-md-3">
+  <div class="thumbnail">
+    <p> Flight Number: {{flight_number}} </p>
+    <p> Departure Date: {{departure_date}} </p>
+    <p> Departure Time: {{departure_time}} </p>
+    <p> Departure: {{departure}} </p>
+    <p> Arrival Date: {{arrival_date}} </p>
+    <p> Arrival Time: {{arrival_time}} </p>
+    <p> Arrival: {{arrival}} </p>
+    <p> Arrival ZipCode: {{arrival_zipcode}} </p>
+    <p> Gate: {{gate}} </p>
+    <p> Terminal: {{terminal}} </p>
+    <form id="search-flight-info">
+      <fieldset>
+        <input id="trip-flight-{{id}}" type="hidden" name="trip[flight_id]" value={{id}}>
+        <button id="add-trip-{{id}}" type="button" class="btn btn-default">Add to my Trips</button>
+      </fieldset>
+    </form>
+  </div>
 </div>

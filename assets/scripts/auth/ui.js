@@ -12,6 +12,10 @@ const signUpSuccess = (data) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
+  $('.signUp').hide();
+  $('.signIn').hide();
+  $('.user-info').show();
+  $('.user-email').text(data.user.email);
   console.log('Success');
 };
 

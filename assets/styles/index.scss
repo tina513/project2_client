@@ -6,3 +6,46 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.content {
+  margin-top: 8%;
+}
+
+.navbar {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.auth-dp {
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+.auth-dp .help-block{
+    font-size:12px
+}
+.auth-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+.auth-dp .social-buttons{
+    margin:12px 0
+}
+.auth-dp .social-buttons a{
+    width: 49%;
+}
+.auth-dp .form-group {
+    margin-bottom: 10px;
+}
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+    background: url("~/img/flightcard2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
