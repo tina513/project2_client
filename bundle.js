@@ -216,7 +216,7 @@ webpackJsonp([0],[
 
 	var app = {
 	  host: 'https://tripcare.herokuapp.com',
-	  weather: 'https://api.openweathermap.org/data/2.5/weather?q='
+	  weather: 'http://api.wunderground.com/api/0fb1e549d95e7b8a/conditions/q/CA/San_Francisco.json'
 	};
 
 	module.exports = app;
@@ -627,7 +627,8 @@ webpackJsonp([0],[
 
 	var addWeather = function addWeather(arrival) {
 	  return $.ajax({
-	    url: app.weather + arrival + '&mode=html&units=imperial&APPID=90f3373b7762926edc47c34ffec2201a',
+	    url: app.weather,
+	    // url: app.weather+arrival+'&mode=html&units=imperial&APPID=90f3373b7762926edc47c34ffec2201a',
 	    method: "GET"
 	  });
 	};
