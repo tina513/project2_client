@@ -1845,7 +1845,7 @@ webpackJsonp([0],[
 	    + alias2(alias1(((stack1 = ((stack1 = ((stack1 = (depth0 != null ? depth0.results : depth0)) != null ? stack1.channel : stack1)) != null ? stack1.item : stack1)) != null ? stack1.title : stack1), depth0))
 	    + " </p>\n    <p> Temperature: "
 	    + alias2(alias1(((stack1 = ((stack1 = ((stack1 = ((stack1 = (depth0 != null ? depth0.results : depth0)) != null ? stack1.channel : stack1)) != null ? stack1.item : stack1)) != null ? stack1.condition : stack1)) != null ? stack1.temp : stack1), depth0))
-	    + " </p>\n    <p> "
+	    + " F</p>\n    <p> "
 	    + alias2(alias1(((stack1 = ((stack1 = ((stack1 = ((stack1 = (depth0 != null ? depth0.results : depth0)) != null ? stack1.channel : stack1)) != null ? stack1.item : stack1)) != null ? stack1.condition : stack1)) != null ? stack1.text : stack1), depth0))
 	    + " </p>\n  </div>\n</div>\n";
 	},"useData":true});
