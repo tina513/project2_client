@@ -28,6 +28,12 @@ const changePasswordSuccess = (data) => {
 };
 
 const signOutSuccess = () => {
+  $('.signUp').show();
+  $('.signIn').show();
+  $('.user-info').hide();
+  $('.search-flight-content').text('');
+  $('.future-flight-content').text('');
+  $('.past-flight-content').text('');
   console.log('User signed out successfully');
 };
 

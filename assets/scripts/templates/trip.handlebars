@@ -1,4 +1,4 @@
-<div class="col-xs-18 col-sm-6 col-md-3">
+<!-- <div class="col-xs-18 col-sm-6 col-md-3">
   <div class="thumbnail">
     <p> Flight Number: {{flight_number}} </p>
     <p> Departure Date: {{departure_date}} </p>
@@ -11,4 +11,39 @@
     <p> Gate: {{gate}} </p>
     <p> Terminal: {{terminal}} </p>
   </div>
+</div> -->
+
+<div class="container col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="btn-group" style="float:left;">
+              <h4 class="media-heading">Flight Info</h4>
+            </div>
+              <div class="btn-group" style="float:right;">
+                <button type="button"  id="weather-{{this.id}}" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Weather Info
+                </button>
+                <div class="dropdown-menu weather-button weather-container-{{this.id}}">
+                </div>
+              </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-body">
+                  <p> Flight Number: {{flight_number}} </p>
+                  <p> Departure Date: {{departure_date}} </p>
+                  <p> Departure Time: {{departure_time}} </p>
+                  <p> Departure: {{departure}} </p>
+                  <p> Arrival Date: {{arrival_date}} </p>
+                  <p> Arrival Time: {{arrival_time}} </p>
+                  <p> Arrival: {{arrival}} </p>
+                  <p> Arrival ZipCode: {{arrival_zipcode}} </p>
+                  <p> Gate: {{gate}} </p>
+                  <p> Terminal: {{terminal}} </p>
+                <div class="clearfix"></div>
+               </div>
+            </div>
+        </div>
+    </div>
 </div>

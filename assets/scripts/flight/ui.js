@@ -21,8 +21,20 @@ const getFutureFlightSuccess = (data) => {
     let each = tripArr[i];
     let departureDate = new Date(each.flight.departure_date);
     let today = new Date();
-    if ((each.user.id == userId) && (departureDate >= today)) {
-      $('.past-flight-content').append(tripListing(each.flight));
+    if ((each.user.id === userId) && (departureDate >= today)) {
+      $('.future-flight-content').append(tripListing(each.flight));
+      $('#weather-' + each.flight.id.toString()).on('click', function(){
+        addTripApi.addWeather(each.flight.arrival)
+        .done(function(data){
+          $('.weather-container-'+ each.flight.id.toString()).text('');
+          $('.weather-container-'+ each.flight.id.toString()).append(data);
+        })
+        .fail(failure);
+      });
+
+      // addTripApi.addWeather(each.flight.arrival)
+      // .done(weatherSuccess)
+      // .fail(failure);
     }
   }
 };
@@ -35,8 +47,16 @@ const getPastFlightSuccess = (data) => {
     let each = tripArr[i];
     let departureDate = new Date(each.flight.departure_date);
     let today = new Date();
-    if ((each.user.id == userId) && (departureDate < today)) {
+    if ((each.user.id === userId) && (departureDate < today)) {
       $('.past-flight-content').append(tripListing(each.flight));
+      $('#weather-' + each.flight.id.toString()).on('click', function(){
+        addTripApi.addWeather(each.flight.arrival)
+        .done(function(data){
+          $('.weather-container-'+ each.flight.id.toString()).text('');
+          $('.weather-container-'+ each.flight.id.toString()).append(data);
+        })
+        .fail(failure);
+      });
     }
   }
 };
@@ -55,23 +75,27 @@ const searchSuccess = (data) => {
   let flightArr = data.flights;
   for (let i = 0; i < flightArr.length; i++) {
     let each = flightArr[i];
-    if (each.flight_number == typeFlightNumber){
+    if (each.flight_number === typeFlightNumber){
       $('.search-flight-content').append(searchFlightListing(each));
       $('#add-trip-' + each.id.toString()).on('click', function(){
         let flightId = $('#trip-flight-'+each.id.toString()).val();
-        console.log(flightId);
-        console.log(app.user.id);
         addTripApi.addFlight(app.user.id, flightId)
         .done(createFlightSuccess)
         .fail(failure);
       });
-    };
-  };
+    }
+  }
 };
+
+// const weatherSuccess = (data) => {
+//   console.log(data);
+//   $('.weather-container-'+ each.flight.id.toString()).text('');
+//   $('.weather-container-'+ each.flight.id.toString()).append(data);
+// };
 
 const returnTripsArr = () => {
   return tripArr;
-}
+};
 
 module.exports = {
   failure,
@@ -81,5 +105,6 @@ module.exports = {
   updateFlightsuccess,
   deleteSuccess,
   searchSuccess,
+  // weatherSuccess,
   returnTripsArr,
 };

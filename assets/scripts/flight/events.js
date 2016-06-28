@@ -14,6 +14,9 @@ const onCreateFlight = (event) => {
 };
 
 const onFutureFlight = (event) => {
+  $('.search-flight-content').text('');
+  $('.future-flight-content').text('');
+  $('.past-flight-content').text('');
   event.preventDefault();
   api.getFlight()
   .done(ui.getFutureFlightSuccess)
@@ -21,6 +24,9 @@ const onFutureFlight = (event) => {
 };
 
 const onPastFlight = (event) => {
+  $('.search-flight-content').text('');
+  $('.future-flight-content').text('');
+  $('.past-flight-content').text('');
   event.preventDefault();
   api.getFlight()
   .done(ui.getPastFlightSuccess)
@@ -46,6 +52,9 @@ const onDeleteFlight = (event) => {
 };
 
 const onSearchFlight = (event) => {
+  $('.search-flight-content').text('');
+  $('.future-flight-content').text('');
+  $('.past-flight-content').text('');
   event.preventDefault();
   let data = getFormFields(event.target);
   console.log(data);
@@ -54,16 +63,16 @@ const onSearchFlight = (event) => {
   .fail(ui.failure);
 };
 
-const onAddTrip = (event) => {
-  // event.preventDefault();
-  let flightId = $('#trip-flight-id').val();
-  console.log(flightId);
-  // let data = getFormFields(event.target);
-  // console.log(data);
-  // api.addFlight(app.user.id, data.trip.flight_id)
-  // .done(ui.addTripSuccess)
-  // .fail(ui.failure);
-};
+// const onAddTrip = (event) => {
+//   // event.preventDefault();
+//   let flightId = $('#trip-flight-id').val();
+//   console.log(flightId);
+//   // let data = getFormFields(event.target);
+//   // console.log(data);
+//   // api.addFlight(app.user.id, data.trip.flight_id)
+//   // .done(ui.addTripSuccess)
+//   // .fail(ui.failure);
+// };
 
 
 
