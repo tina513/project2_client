@@ -11,6 +11,7 @@ const failure = (error) => {
 
 const createFlightSuccess = (data) => {
   console.log(app.user);
+  $('.input-field').val('');
 };
 
 const getFutureFlightSuccess = (data) => {
