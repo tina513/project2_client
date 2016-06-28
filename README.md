@@ -14,3 +14,6 @@ So, I would like to take a look at how other people approach this layout and get
 test for my backend. I really want to try it for my app.
 
 5.Link to wireframes and user stories. Project wireframe: https://docs.google.com/presentation/d/18vuG0LcAsVUFlT1EHVSiiohz_M89ejm5TNOPuxeKX20/edit?usp=sharing
+
+6.Link to the backend repo:
+https://github.com/tina513/project2_api
