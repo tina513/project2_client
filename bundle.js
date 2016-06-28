@@ -215,7 +215,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  host: 'https://tripcare.herokuapp.com/',
+	  host: 'https://tripcare.herokuapp.com',
 	  weather: 'http://api.openweathermap.org/data/2.5/weather?q='
 	};
 
