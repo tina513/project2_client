@@ -19,6 +19,7 @@ const createFlightSuccess = (data) => {
 
 const getFutureFlightSuccess = (data) => {
   let tripListing = require('../templates/trip.handlebars');
+  let weatherListing = require('../templates/weather.handlebars');
   let userId = app.user.id;
   tripArr = data.trips;
   for (let i = 0; i < tripArr.length; i++) {
@@ -31,20 +32,17 @@ const getFutureFlightSuccess = (data) => {
         addTripApi.addWeather(each.flight.arrival)
         .done(function(data){
           $('.weather-container-'+ each.flight.id.toString()).text('');
-          $('.weather-container-'+ each.flight.id.toString()).append(data);
+          $('.weather-container-'+ each.flight.id.toString()).append(weatherListing(data.query));
         })
         .fail(failure);
       });
-
-      // addTripApi.addWeather(each.flight.arrival)
-      // .done(weatherSuccess)
-      // .fail(failure);
     }
   }
 };
 
 const getPastFlightSuccess = (data) => {
   let tripListing = require('../templates/trip.handlebars');
+  let weatherListing = require('../templates/weather.handlebars');
   let userId = app.user.id;
   tripArr = data.trips;
   for (let i = 0; i < tripArr.length; i++) {
@@ -56,8 +54,9 @@ const getPastFlightSuccess = (data) => {
       $('#weather-' + each.flight.id.toString()).on('click', function(){
         addTripApi.addWeather(each.flight.arrival)
         .done(function(data){
+           console.log(data);
           $('.weather-container-'+ each.flight.id.toString()).text('');
-          $('.weather-container-'+ each.flight.id.toString()).append(data);
+          $('.weather-container-'+ each.flight.id.toString()).append(weatherListing(data.query));
         })
         .fail(failure);
       });
@@ -96,11 +95,6 @@ const searchSuccess = (data) => {
   }
 };
 
-// const weatherSuccess = (data) => {
-//   console.log(data);
-//   $('.weather-container-'+ each.flight.id.toString()).text('');
-//   $('.weather-container-'+ each.flight.id.toString()).append(data);
-// };
 
 const returnTripsArr = () => {
   return tripArr;
