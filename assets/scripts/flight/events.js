@@ -45,7 +45,6 @@ const onEditFlight = (event) => {
 const onDeleteFlight = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  //console.log(data);
   api.deleteFlight(data)
   .done(ui.deleteSuccess)
   .fail(ui.failure);
@@ -62,19 +61,6 @@ const onSearchFlight = (event) => {
   .done(ui.searchSuccess)
   .fail(ui.failure);
 };
-
-// const onAddTrip = (event) => {
-//   // event.preventDefault();
-//   let flightId = $('#trip-flight-id').val();
-//   console.log(flightId);
-//   // let data = getFormFields(event.target);
-//   // console.log(data);
-//   // api.addFlight(app.user.id, data.trip.flight_id)
-//   // .done(ui.addTripSuccess)
-//   // .fail(ui.failure);
-// };
-
-
 
 const addHandlers = () => {
   $('#flight-info').on('submit', onCreateFlight);

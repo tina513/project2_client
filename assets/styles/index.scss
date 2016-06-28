@@ -2,9 +2,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background: url("../../download.jpeg");
+  background: url("../../blue-sky.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.9;
 }
 
 .content {

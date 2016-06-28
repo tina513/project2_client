@@ -6,6 +6,3 @@ const app = {
 };
 
 module.exports = app;
-
-
-// https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20location%3D%2233015%22&format=json

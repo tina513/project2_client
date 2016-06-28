@@ -26,9 +26,15 @@ const getFlight = () => {
 
 const updateFlight = (data) => {
   let arr = ui.returnTripsArr();
+  console.log(data);
+  console.log(arr);
   for (let i = 0; i < arr.length; i++) {
     let trip = arr[i];
+    console.log("hi");
+    console.log(trip.flight.flight_number);
+    console.log(data.flights.flight_number);
     if (trip.flight.flight_number === data.flights.flight_number){
+      console.log(data);
       return $.ajax({
         url: app.host + `/flights/` + trip.flight.id,
         method: 'PATCH',
@@ -37,8 +43,8 @@ const updateFlight = (data) => {
           Authorization: 'Token token=' + app.user.token,
         },
       });
-    }
-  }
+    };
+  };
 };
 
 const deleteFlight = (data) => {
@@ -46,7 +52,6 @@ const deleteFlight = (data) => {
   for (let i = 0; i < arr.length; i++) {
     let trip = arr[i];
     if ((trip.flight.flight_number === data.flights.flight_number) && (trip.user.id === app.user.id)) {
-      // console.log(trip.id);
       return $.ajax({
         url: app.host + '/trips/' + trip.id,
         method: "DELETE",

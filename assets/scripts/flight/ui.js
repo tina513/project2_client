@@ -10,7 +10,6 @@ const failure = (error) => {
 };
 
 const createFlightSuccess = (data) => {
-  console.log(app.user);
   $('.input-field').val('');
   $('.search-flight-content').text('');
   $('.future-flight-content').text('');
@@ -54,7 +53,6 @@ const getPastFlightSuccess = (data) => {
       $('#weather-' + each.flight.id.toString()).on('click', function(){
         addTripApi.addWeather(each.flight.arrival)
         .done(function(data){
-           console.log(data);
           $('.weather-container-'+ each.flight.id.toString()).text('');
           $('.weather-container-'+ each.flight.id.toString()).append(weatherListing(data.query));
         })
@@ -108,6 +106,5 @@ module.exports = {
   updateFlightsuccess,
   deleteSuccess,
   searchSuccess,
-  // weatherSuccess,
   returnTripsArr,
 };
