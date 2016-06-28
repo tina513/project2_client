@@ -1,7 +1,7 @@
 'use strict';
 
 const app = {
-  host: 'http://localhost:3000',
+  host: 'https://tripcare.herokuapp.com/',
   weather: 'http://api.openweathermap.org/data/2.5/weather?q='
 };
 

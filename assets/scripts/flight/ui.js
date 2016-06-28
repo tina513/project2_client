@@ -12,6 +12,9 @@ const failure = (error) => {
 const createFlightSuccess = (data) => {
   console.log(app.user);
   $('.input-field').val('');
+  $('.search-flight-content').text('');
+  $('.future-flight-content').text('');
+  $('.past-flight-content').text('');
 };
 
 const getFutureFlightSuccess = (data) => {
@@ -64,10 +67,15 @@ const getPastFlightSuccess = (data) => {
 
 const updateFlightsuccess = () => {
   console.log("success!");
+  $('.input-field').val('');
 };
 
 const deleteSuccess = () => {
   console.log("success!");
+  $('.input-field').val('');
+  $('.search-flight-content').text('');
+  $('.future-flight-content').text('');
+  $('.past-flight-content').text('');
 };
 
 const searchSuccess = (data) => {
