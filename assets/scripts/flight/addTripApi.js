@@ -2,13 +2,13 @@
 
 const app = require('../app.js');
 
-const addFlight = (userId, flightId) => {
+const addFlight = (flightId) => {
   return $.ajax({
     url: app.host + '/trips',
     method: "POST",
     data: {
       trip: {
-        user_id: userId,
+        // user_id: userId,
         flight_id: flightId,
       },
     },
