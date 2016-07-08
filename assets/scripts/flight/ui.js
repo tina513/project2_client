@@ -85,7 +85,7 @@ const searchSuccess = (data) => {
       $('.search-flight-content').append(searchFlightListing(each));
       $('#add-trip-' + each.id.toString()).on('click', function(){
         let flightId = $('#trip-flight-'+each.id.toString()).val();
-        addTripApi.addFlight(app.user.id, flightId)
+        addTripApi.addFlight(flightId)
         .done(createFlightSuccess)
         .fail(failure);
       });
